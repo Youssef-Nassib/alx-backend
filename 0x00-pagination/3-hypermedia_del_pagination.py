@@ -8,9 +8,8 @@ from typing import Dict, List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """getrieves the index range from a given page and page size.
+    """get the index range from a given page and page size.
     """
-
     return ((page - 1) * page_size, ((page - 1) * page_size) + page_size)
 
 
@@ -34,7 +33,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Retrieves a page of data.
+        """get a page of data.
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
@@ -45,7 +44,7 @@ class Server:
         return data[start:end]
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Retrieves info about a page from a given index and with a
+        """get info about a page from a given index and with a
         specified size.
         """
         data = self.indexed_dataset()
